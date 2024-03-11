@@ -128,7 +128,7 @@ lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
         groups: lo
 ```
 
-11) Connecting to the virtual machine from the host.
+11) Connecting to the virtual machine from the host. TBD: ssh in /etc/ssh must be setup first.
 ```
 spicy -p 5900
 ```
