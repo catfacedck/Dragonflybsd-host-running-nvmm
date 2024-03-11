@@ -87,5 +87,16 @@ qemu-system-x86_64 \
 	-boot d
 ```
 
+This will provide a boot menu. Boot from the cdrom. Follow the directions to install on the disk (dfly.qcow2).
+One you have installed on disk, reboot from the newly installed image.
+
+10) Configure dhcp networking on the virtual machine quest.
+```
+dhclient vtnet0
+```
+
+Check by running ```netstat -nr```  and ```ifconfig -a```
+
+
 
 
