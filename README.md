@@ -39,3 +39,10 @@ ifconfig tap0 up
 ```
 chown $USER /dev/tap0
 ```
+
+6) Add the tap0 interface and host Ethernet interface (re0 here) to the bridge.
+```
+ifconfig bridge0 addm re0
+ifconfig bridge0 addm tap0
+```
+
