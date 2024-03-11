@@ -1,4 +1,4 @@
-# Dragonflybsd-nvmm host laptop using Ethernet
+## Dragonflybsd-nvmm host laptop using Ethernet
 
 Guest with Ethernet host networking.
 Provisioning is simple when using wired Ethernet on the host as Ethernet can support multiple IP addresses.
@@ -45,4 +45,6 @@ chown $USER /dev/tap0
 ifconfig bridge0 addm re0
 ifconfig bridge0 addm tap0
 ```
+
+# Security notes: by adding re0 to the bridge will enable promiscuous mode on it (e.g. it can be sniffed). 
 
