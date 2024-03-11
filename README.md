@@ -95,6 +95,8 @@ One you have installed on disk, reboot from the newly installed image.
 dhclient vtnet0
 ```
 
+Add ```ifconfig_vtnet0="DHCP"``` to /etc/rc.conf to make it permanent.
+
 Check by running ```netstat -nr```  and ```ifconfig -a```
 
 ```
