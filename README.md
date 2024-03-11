@@ -97,6 +97,34 @@ dhclient vtnet0
 
 Check by running ```netstat -nr```  and ```ifconfig -a```
 
+```
+Routing tables                                  
+
+Internet:           
+Destination        Gateway            Flags    Refs      Use  Netif Expire
+default            10.0.2.2           UGSc        4        0 vtnet0
+10.0.2/24          link#1             UC          2        0 vtnet0
+10.0.2.2           52:55:0a:00:02:02  UHLW        5        0 vtnet0    977
+10.0.2.3           52:55:0a:00:02:03  UHLW        0        0 vtnet0    971
+127.0.0.1          127.0.0.1          UH          0        0    lo0
+```
+
+```
+vtnet0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+        options=28<VLAN_MTU,JUMBO_MTU>
+        ether 52:54:00:12:34:56
+        inet6 fe80::5054:ff:fe12:3456qvtnet0 prefixlen 64 scopeid 0x1
+        inet 10.0.2.15 netmask 0xffffff00 broadcast 10.0.2.255
+        media: Ethernet 1000baseT <full-duplex>
+        status: active
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
+        options=43<RXCSUM,TXCSUM,RSS>
+        inet 127.0.0.1 netmask 0xff000000
+        inet6 ::1 prefixlen 128
+        inet6 fe80::1qlo0 prefixlen 64 scopeid 0x2
+        groups: lo
+```
+
 
 
 
