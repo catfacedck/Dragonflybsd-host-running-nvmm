@@ -46,5 +46,6 @@ ifconfig bridge0 addm re0
 ifconfig bridge0 addm tap0
 ```
 
-# Security notes: by adding re0 to the bridge will enable promiscuous mode on it (e.g. it can be sniffed). 
+**-Security notes: by adding re0 to the bridge will enable promiscuous mode on it (e.g. it can be sniffed)._**
+**-This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. This creates two risks: for the guest virtual machine itself, and exposes information from the guest machine to the local network and the Internet._**
 
