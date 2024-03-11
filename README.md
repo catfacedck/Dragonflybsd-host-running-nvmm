@@ -1,6 +1,4 @@
-# Dragonflybsd-nvmm
-
-# DragonflyBSD-nvmm host laptop using Ethernet
+# Dragonflybsd-nvmm host laptop using Ethernet
 
 Guest with Ethernet host networking.
 Provisioning is simple when using wired Ethernet on the host as Ethernet can support multiple IP addresses.
