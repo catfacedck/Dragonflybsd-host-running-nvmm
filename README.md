@@ -133,7 +133,7 @@ lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
 spicy -p 5900
 ```
 ```
-ssh
+ssh -p 8719 $USER@127.0.0.1
 ```
 
 Tigervnc TBD.
