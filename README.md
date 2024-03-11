@@ -54,7 +54,7 @@ ifconfig bridge0 addm tap0
 
 **If the guest machines must be secure and require Internet access consider using network address reanslation (NAT).**
 
-7) Ensure Tiger VNC Viewer (pkg add tigervnc-viewer) or GTK-VNC Viewer (pkg add gtk-vnc) is installed.
+7) Ensure Tiger VNC Viewer (```pkg install tigervnc-viewer```) or GTK-VNC Viewer (```pkg install gtk-vnc```) is installed.
 
 8) To create dfly.qcow2 disk of size 20G:
 ```
