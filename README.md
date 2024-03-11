@@ -9,6 +9,8 @@ A. This Ethernet dragonfly6.5 snapshot laptop host install tested with a dragonf
 
   - Host and guest use hammer2 filesystem.
 
+  - Be sure to install qemu: ```pkg install qemu'''.
+
 **_Step-by step procedure, assuming your dragonfly host Ethernet is re0:_**
 
 1)  Modify /boot/loader.conf to add the line (or use "kldload nvmm" to load the kernel module):
@@ -51,4 +53,12 @@ ifconfig bridge0 addm tap0
 **This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. This creates two risks: for the guest virtual machine itself, and exposes information from the guest machine to the local network and the Internet.**
 
 **If the guest machines must be secure and require Internet access consider using network address reanslation (NAT).**
+
+7) Ensure Tiger VNC Viewer (pkg add tigervnc-viewer) or GTK-VNC Viewer (pkg add gtk-vnc) is installed.
+
+8) To create dfly.qcow2 disk of size 20G:
+```
+qemu-img create -f qcow2 dfly.qcow2 20G
+```
+
 
