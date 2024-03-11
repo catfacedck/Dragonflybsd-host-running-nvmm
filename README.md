@@ -9,7 +9,7 @@ A. This Ethernet dragonfly6.5 snapshot laptop host install tested with a dragonf
 
   - Host and guest use hammer2 filesystem.
 
-  - Be sure to install qemu: ```pkg install qemu'''.
+  - Be sure to install qemu: ```pkg install qemu```.
 
 **_Step-by step procedure, assuming your dragonfly host Ethernet is re0:_**
 
