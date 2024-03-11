@@ -61,4 +61,31 @@ ifconfig bridge0 addm tap0
 qemu-img create -f qcow2 dfly.qcow2 20G
 ```
 
+9) Start your guest virtual mavhine. Be sure tap0 is up. Run:
+```
+ifconfig tap0 up
+```
+first.
+
+```
+qemu-system-x86_64 \
+	-accel nvmm \
+        -cpu max -smp cpus=4 -m 4G \
+	-hda /vms/dfly.qcow2 \
+	-boot menu=on \
+	-netdev user,id=net0,hostfwd=tcp:127.0.0.1:6022-:22 \
+	-device virtio-net-pci,netdev=net0 \
+  	-object rng-random,id=rng0,filename=/dev/urandom \
+  	-device virtio-rng-pci,rng=rng0 \
+	-display curses \
+	-vga qxl \
+	-spice addr=127.0.0.1,port=5900,ipv4=on,disable-ticketing=on,seamless-migration=on \
+	-usb \
+	-device usb-tablet \
+	-device usb-mouse,bus=usb-bus.0 \
+	-cdrom /vms/dfly-march9.iso \
+	-boot d
+```
+
+
 
