@@ -128,10 +128,13 @@ lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
         groups: lo
 ```
 
-11) Connecting to the virtual machine.
+11) Connecting to the virtual machine from the host.
 ```
 spicy -p 5900
 ```
+
+```
+
 
 
 
