@@ -21,7 +21,7 @@ nvmm_load="YES"
 sysctl net.link.tap.up_on_open=1
 sysctl net.link.tap.user_open=1
 ```
-(add permanently in /etc/sysctl.conf -> net.link.tap.up_on_open=1)
+(add permanently in /etc/sysctl.conf -> net.link.tap.up_on_open=1, net.link.tap.user_open=1)
 
 3) Create the bridge interface.
    ```
@@ -29,4 +29,8 @@ sysctl net.link.tap.user_open=1
    ifconfig bridge0 up
    ```
 
-4) 
+4) Add the following network tap on the host:
+```
+ifconfig tap0 create
+ifconfig tap0 up
+```
