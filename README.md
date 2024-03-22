@@ -87,7 +87,7 @@ qemu-system-x86_64 \
 ```
 
 This will provide a boot menu. Boot from the cdrom and follow the directions to install from the iso file (option 1) to the disk (dfly.qcow2).
-Note: choose the MBR boot method not UEFI (otherwise your new virtual machine will not boot). Once you have installed on disk, reboot into the newly installed disk image (option 3).
+Note: choose the MBR boot method during installation to disk, not UEFI (otherwise your new virtual machine will not boot). Once you have installed on disk, reboot into the newly installed disk image (option 3).
 
 9) Configure dhcp networking on the guest virtual machine.
 ```
