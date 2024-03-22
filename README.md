@@ -52,7 +52,7 @@ sysctl net.link.tap.user_open=1
 
 **This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. This creates two risks: for the guest virtual machine itself, and exposes information from the guest machine to the local network and the Internet.**
 
-**If the guest machines must be secure and retapquire Internet access consider using network address reanslation (NAT).**
+**If the guest machines must be secure and require Internet access consider using network address reanslation (NAT).**
 
 6) Ensure Tiger VNC Viewer (```pkg install tigervnc-viewer```) or GTK-VNC Viewer (```pkg install gtk-vnc```) is installed.
 
