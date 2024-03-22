@@ -48,7 +48,7 @@ sysctl net.link.tap.user_open=1
 ```
 (add permanently in /etc/sysctl.conf -> net.link.tap.up_on_open=1, net.link.tap.user_open=1)
 
-**Security notes: by adding re0 to the bridge will enable promiscuous mode on it (e.g. it can be sniffed).**
+**Security notes: by adding re0 to the bridge will enable promiscuous mode and it can be sniffed.**
 
 **This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. Use this configuration with caution, or if the guest machine must be secure and require Internet access consider using network address reanslation (NAT).**
 
