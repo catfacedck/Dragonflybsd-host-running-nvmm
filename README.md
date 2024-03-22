@@ -50,9 +50,7 @@ sysctl net.link.tap.user_open=1
 
 **Security notes: by adding re0 to the bridge will enable promiscuous mode on it (e.g. it can be sniffed).**
 
-**This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. This creates two risks: for the guest virtual machine itself, and exposes information from the guest machine to the local network and the Internet.**
-
-**If the guest machines must be secure and require Internet access consider using network address reanslation (NAT).**
+**This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. Use this configuration with caution, or if the guest machine must be secure and require Internet access consider using network address reanslation (NAT).**
 
 6) Ensure Tiger VNC Viewer (```pkg install tigervnc-viewer```) or GTK-VNC Viewer (```pkg install gtk-vnc```) is installed.
 
