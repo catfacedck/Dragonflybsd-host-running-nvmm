@@ -18,50 +18,50 @@ A. This Ethernet dragonfly6.5 snapshot laptop host install tested with a dragonf
 nvmm_load="YES"
 ```
 
-2) Modify sysctl:
+2) Create the bridge interface.
+```
+ifconfig bridge0 create
+ifconfig bridge0 up
+```
+
+3) Add the following network tap on the host:
+```
+ifconfig tap0 create
+ifconfig tap0 up
+```
+
+4) Allow non root user to use tap0.
+```
+chown $USER /dev/tap0
+```
+
+5) Add the tap0 interface and host Ethernet interface (re0 here) to the bridge.
+```
+ifconfig bridge0 addm re0
+ifconfig bridge0 addm tap0
+```
+
+5.1) Modify sysctl: this must be done after creating the tap0 interface.
 ```
 sysctl net.link.tap.up_on_open=1
 sysctl net.link.tap.user_open=1
 ```
 (add permanently in /etc/sysctl.conf -> net.link.tap.up_on_open=1, net.link.tap.user_open=1)
 
-3) Create the bridge interface.
-```
-ifconfig bridge0 create
-ifconfig bridge0 up
-```
-
-4) Add the following network tap on the host:
-```
-ifconfig tap0 create
-ifconfig tap0 up
-```
-
-5) Allow non root user to use tap0.
-```
-chown $USER /dev/tap0
-```
-
-6) Add the tap0 interface and host Ethernet interface (re0 here) to the bridge.
-```
-ifconfig bridge0 addm re0
-ifconfig bridge0 addm tap0
-```
-
 **Security notes: by adding re0 to the bridge will enable promiscuous mode on it (e.g. it can be sniffed).**
 
 **This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. This creates two risks: for the guest virtual machine itself, and exposes information from the guest machine to the local network and the Internet.**
 
-**If the guest machines must be secure and require Internet access consider using network address reanslation (NAT).**
+**If the guest machines must be secure and retapquire Internet access consider using network address reanslation (NAT).**
 
-7) Ensure Tiger VNC Viewer (```pkg install tigervnc-viewer```) or GTK-VNC Viewer (```pkg install gtk-vnc```) is installed.
+6) Ensure Tiger VNC Viewer (```pkg install tigervnc-viewer```) or GTK-VNC Viewer (```pkg install gtk-vnc```) is installed.
 
-8) To create dfly.qcow2 disk of size 20G:
+7) To create dfly.qcow2 disk of size 20G:
 ```
 qemu-img create -f qcow2 dfly.qcow2 20G
 ```
 
-9) Start your guest virtual mavhine. Be sure tap0 is up. Run:
+8) Start your guest virtual mavhine. Be sure tap0 is up. Run:
 ```
 ifconfig tap0 up
 ```
@@ -91,7 +91,7 @@ qemu-system-x86_64 \
 This will provide a boot menu. Boot from the cdrom. Follow the directions to install on the disk (dfly.qcow2).
 One you have installed on disk, reboot from the newly installed image.
 
-10) Configure dhcp networking on the guest virtual machine.
+9) Configure dhcp networking on the guest virtual machine.
 ```
 dhclient vtnet0
 ```
@@ -128,7 +128,7 @@ lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
         groups: lo
 ```
 
-11) Connecting to the virtual machine from the host. TBD: ssh in /etc/ssh must be setup first.
+10) Connecting to the virtual machine from the host. TBD: ssh in /etc/ssh must be setup first.
 ```
 spicy -p 5900
 ```
