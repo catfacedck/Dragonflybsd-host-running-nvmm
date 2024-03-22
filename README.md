@@ -84,7 +84,7 @@ qemu-system-x86_64 \
 	-usb \
 	-device usb-tablet \
 	-device usb-mouse,bus=usb-bus.0 \
-	-cdrom /vms/dfly-march9.iso \
+	-cdrom /vms/Dragonfly-x86_64-LATEST-ISO.iso \
 	-boot d
 ```
 
