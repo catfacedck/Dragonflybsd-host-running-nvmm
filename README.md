@@ -48,9 +48,9 @@ sysctl net.link.tap.user_open=1
 ```
 (add permanently in /etc/sysctl.conf -> net.link.tap.up_on_open=1, net.link.tap.user_open=1)
 
-**Security notes: by adding re0 to the bridge will enable promiscuous mode and it can be sniffed.**
-
-**This bridge networking method exposes your virtual machine to the local area network and makes it accessible to all other networked machines, in addition to the host. Use this configuration with caution, or if the guest machine must be secure and require Internet access consider using network address reanslation (NAT).**
+>[!Caution]
+>Security note: adding re0 to the bridge will enable promiscuous mode and it can then be sniffed.
+>This bridged networking method exposes your virtual machine to the local network making it accessible to all other networked machines, in addition to the host. Use this configuration with caution, or if the guest machine must be secure and require Internet access consider using network address translation (NAT), e.g. set up pf.
 
 6) Ensure Tiger VNC Viewer (```pkg install tigervnc-viewer```) or GTK-VNC Viewer (```pkg install gtk-vnc```) is installed.
 
@@ -87,7 +87,8 @@ qemu-system-x86_64 \
 ```
 
 This will provide a boot menu. Boot from the cdrom and follow the directions to install from the iso file (option 1) to the disk (dfly.qcow2).
-Note: choose the MBR boot method during installation to disk, not UEFI (otherwise your new virtual machine will not boot). Once you have installed on disk, reboot into the newly installed disk image (option 3).
+>[!Note]
+>Choose the MBR boot method during installation to disk, not UEFI (otherwise your new virtual machine will not boot). Once you have installed on disk, reboot into the newly installed disk image (option 3).
 
 9) Configure dhcp networking on the guest virtual machine.
 ```
