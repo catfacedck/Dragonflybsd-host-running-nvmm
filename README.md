@@ -1,4 +1,4 @@
-## Dragonflybsd-nvmm host laptop using Ethernet
+# Dragonflybsd-nvmm host laptop using Ethernet
 
 Guest with Ethernet host networking.
 Provisioning is simple when using wired Ethernet on the host as Ethernet can support multiple IP addresses.
@@ -11,7 +11,7 @@ A. This Ethernet dragonfly6.5 snapshot laptop host install tested with a dragonf
 
   - Be sure to install qemu: ```pkg install qemu```.
 
-#**_Step-by step procedure, assuming your dragonfly host Ethernet is re0:_**
+## **_Step-by step procedure, assuming your dragonfly host Ethernet is re0:_**
 
 1)  Modify /boot/loader.conf to add the line (or use "kldload nvmm" to load the kernel module):
 ```
