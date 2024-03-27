@@ -50,7 +50,7 @@ sysctl net.link.tap.user_open=1
 
 >[!Caution]
 >Security note: This bridged network topology is a critical vulnerability. By adding re0 to the bridge promiscuous mode is enabled.
->This exposes the virtual machine to the local network making it accessible to all other networked machines, in addition to the host. Use this configuration with caution, or if the guest machine must be secure and require Internet access consider using network address translation (NAT), e.g. set up pf.
+>This exposes the virtual machine to the local network making it accessible to all. Use this configuration with caution, or if the guest machine must be secure and require Internet access consider using network address translation (NAT), e.g. set up pf.
 
 6) Ensure Tiger VNC Viewer (```pkg install tigervnc-viewer```) or GTK-VNC Viewer (```pkg install gtk-vnc```) is installed.
 
