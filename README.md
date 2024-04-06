@@ -78,7 +78,7 @@ qemu-system-x86_64 \
 	-display curses \
 	-vga qxl \
 	-spice addr=127.0.0.1,port=5900,ipv4=on,disable-ticketing=on,seamless-migration=on \
-	-display vnc=unix:/home/daniel/.qemu-myvm-vnc -vga vmware \
+	-display vnc=unix:/home/$USER/.qemu-myvm-vnc -vga vmware \
 	-usb \
 	-device usb-tablet \
 	-device usb-mouse,bus=usb-bus.0 \
