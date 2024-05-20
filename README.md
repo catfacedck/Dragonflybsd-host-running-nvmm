@@ -139,5 +139,9 @@ ssh -p 8719 $USER@127.0.0.1
 Tigervnc TBD.
 
 
+>[!Note]
+> This network configuration, bridged re0, also works for FreeBSD 14-STABLE, 14.1, and current where the guest is bridged to a hardwired Ethernet interface.
+
+
 
 
